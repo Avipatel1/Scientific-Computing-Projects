@@ -10,7 +10,7 @@ The project is architected as an asynchronous data pipeline to isolate heavy num
 
 
 1. **C++ Simulation Core (`main.cpp`):** Handles raw floating-point operations, computing multi-body vector accelerations and stepping system states through time. It serializes spatial data arrays directly to the disk as a flat text matrix.
-2. **Python Visualizer UI (`plot_orbit.py`):** Ingests the data matrix using vectorized NumPy arrays. It drives a real-time fluid rendering engine via `matplotlib.animation` and manages user interaction.
+2. **Python Visualizer UI (`orbit_simulation.py`):** Ingests the data matrix using vectorized NumPy arrays. It drives a real-time fluid rendering engine via `matplotlib.animation` and manages user interaction.
 3. **Python Analytical Core (`analyze_physics.py`):** Automatically parses raw telemetry to calculate orbital metrics, validating the engine’s mathematical integrity against classical physical laws.
 
 ---
@@ -86,7 +86,7 @@ The absolute consistency of the $\frac{T^2}{a^3}$ ratio across multi-variable or
    ```
 3. Run the interactive graphic visualizer:
    ```bash
-   python plot_orbit.py
+   python orbit_simulation.py
    ```
 4. Run the physics audit suite to output the validation analytics table:
    ```bash
